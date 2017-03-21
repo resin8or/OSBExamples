@@ -1,0 +1,23 @@
+<adapter-config name="getEmployeeDetails" adapter="db" wsdlLocation="getEmployeeDetails.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="hr-orcl" location="eis/DB/XEConnection"/>
+  <endpoint-interaction portType="getEmployeeDetails_ptt" operation="delete">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="getEmployeeDetails.Employees"/>
+      <property name="DmlType" value="delete"/>
+      <property name="MappingsMetaDataURL" value="getEmployeeDetails-or-mappings.xml"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="getEmployeeDetails_ptt" operation="getEmployeeDetailsSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="getEmployeeDetails.Employees"/>
+      <property name="QueryName" value="getEmployeeDetailsSelect"/>
+      <property name="MappingsMetaDataURL" value="getEmployeeDetails-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

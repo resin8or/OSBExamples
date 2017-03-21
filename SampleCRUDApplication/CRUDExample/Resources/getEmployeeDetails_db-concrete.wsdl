@@ -1,0 +1,21 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/SampleCRUDApplication/CRUDExample/getEmployeeDetails" name="getEmployeeDetails_db-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="getEmployeeDetails.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/SampleCRUDApplication/CRUDExample/getEmployeeDetails"/>
+    <wsdl:binding name="getEmployeeDetails_ptt-binding" type="get:getEmployeeDetails_ptt" xmlns:get="http://xmlns.oracle.com/pcbpel/adapter/db/SampleCRUDApplication/CRUDExample/getEmployeeDetails">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="delete">
+            <soap:operation soapAction="delete"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getEmployeeDetailsSelect">
+            <soap:operation soapAction="getEmployeeDetailsSelect"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

@@ -1,0 +1,35 @@
+<wsdl:definitions
+     name="getEmployeeDetails"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/SampleCRUDApplication/CRUDExample/getEmployeeDetails"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/SampleCRUDApplication/CRUDExample/getEmployeeDetails"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/getEmployeeDetails"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="getEmployeeDetails_plt" >
+    <plt:role name="getEmployeeDetails_role" >
+      <plt:portType name="tns:getEmployeeDetails_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/getEmployeeDetails" schemaLocation="getEmployeeDetails_table.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="getEmployeeDetailsSelect_inputParameters">
+        <wsdl:part name="getEmployeeDetailsSelect_inputParameters" element="top:getEmployeeDetailsSelect_employeeIdInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="EmployeesCollection_msg">
+        <wsdl:part name="EmployeesCollection" element="top:EmployeesCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="getEmployeeDetails_ptt">
+        <wsdl:operation name="delete">
+            <wsdl:input message="tns:EmployeesCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="getEmployeeDetailsSelect">
+            <wsdl:input message="tns:getEmployeeDetailsSelect_inputParameters"/>
+            <wsdl:output message="tns:EmployeesCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>
