@@ -1,0 +1,6 @@
+<ns2:addrval_input xmlns:ns2="urn:xyzbank:cust:schema:address">
+    <address_line>3 Harbour Drive,Cardiff,CF10 4WZ</address_line>
+    <state>Wales</state>
+    <country>UK</country>
+    <zip_code>CF10 4WZ</zip_code>
+</ns2:addrval_input>

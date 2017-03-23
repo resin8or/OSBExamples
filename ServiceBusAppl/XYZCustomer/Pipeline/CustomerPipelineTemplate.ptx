@@ -3,7 +3,7 @@
     <con:coreEntry>
         <con:binding type="SOAP" xsi:type="con:AnyWsdlSoapBindingType"/>
     </con:coreEntry>
-    <con:router>
+    <con:router errorHandler="error-N56011d8b.N11bfdcc5.0.15afb4a33be.N7ffa">
         <con:pipeline type="request" name="request-N3f57fffc.15bda312.0.15aedd5cac6.N7fff">
             <con:stage id="_StageId-N3f57fffc.15bda312.0.15aedd5cac6.N7ffd" name="Validation">
                 <con:context/>
@@ -15,9 +15,16 @@
                     <con:placeholder-node id="PlaceholderID_N3f57fffc.15bda312.0.15aedd5cac6.N7ff8"/>
                 </con:actions>
             </con:stage>
+            <con:placeholder-node id="PlaceholderID_N56011d8b.N11bfdcc5.0.15afb4a33be.N7fff"/>
         </con:pipeline>
         <con:pipeline type="response" name="response-N3f57fffc.15bda312.0.15aedd5cac6.N7ffe">
             <con:placeholder-node id="PlaceholderID_N3f57fffc.15bda312.0.15aedd5cac6.N7fc6"/>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N56011d8b.N11bfdcc5.0.15afb4a33be.N7ffa">
+            <con:stage id="_StageId-N56011d8b.N11bfdcc5.0.15afb4a33be.N7ff9" name="ErrorHandler">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
         </con:pipeline>
         <con:flow>
             <con:template-branch-node type="operation" id="_FlowId-N3f57fffc.15bda312.0.15aedd5cac6.N8000" name="CustomerOperation">
@@ -25,10 +32,16 @@
                 <con:branch-table>
                     <con:main-branch>
                         <con:flow>
-                            <con:pipeline-node name="PipelinePairNode1">
+                            <con:pipeline-node name="PipelinePair">
                                 <con:request>request-N3f57fffc.15bda312.0.15aedd5cac6.N7fff</con:request>
                                 <con:response>response-N3f57fffc.15bda312.0.15aedd5cac6.N7ffe</con:response>
                             </con:pipeline-node>
+                            <con:route-node id="_RouteId-N56011d8b.N11bfdcc5.0.15afb4a33be.N7ffc" name="Route">
+                                <con:context/>
+                                <con:actions>
+                                    <con:placeholder-node id="PlaceholderID_N56011d8b.N11bfdcc5.0.15afb4a33be.N7ffb"/>
+                                </con:actions>
+                            </con:route-node>
                         </con:flow>
                     </con:main-branch>
                     <con:default-branch>

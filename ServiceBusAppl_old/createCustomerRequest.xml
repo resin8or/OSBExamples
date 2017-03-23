@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:xyzbank:cust:schema:customer">
+  <soapenv:Header>
+  <soapenv:Body>
+  	<urn:status_msg>
+  		<customer_id>1234</customer_id>
+  		<status>S</status>
+  	</urn:status_msg>
+  </soapenv:Body>
+</soapenv:Envelope>	

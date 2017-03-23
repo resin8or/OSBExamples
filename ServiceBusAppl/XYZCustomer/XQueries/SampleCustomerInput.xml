@@ -1,0 +1,15 @@
+<Customer xmlns="http://xmlns.xyzbank.com/schema/Customer">
+   <CustomerID xmlns="">1</CustomerID>
+   <FirstName xmlns="">Joe</FirstName>
+   <LastName xmlns="">Bloggs</LastName>
+   <Email xmlns="">joe.bloggsAtradius@gmail.com</Email>
+   <Phone xmlns="">12345566</Phone>
+   <DOB xmlns="">2017-03-23</DOB>
+   <CustomerType xmlns="">Individual</CustomerType>
+   <Address1 xmlns="">3 Harbour Drive</Address1>
+   <Address2 xmlns="">Cardiff</Address2>
+   <Address3 xmlns="">CF10 4WZ</Address3>
+   <State xmlns="">Wales</State>
+   <Country xmlns="">UK</Country>
+   <ZipCode xmlns="">CF10 4WZ</ZipCode>
+</Customer>
